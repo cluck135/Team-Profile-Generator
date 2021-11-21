@@ -1,0 +1,11 @@
+
+/* Use bootstrap to clean up the styling and ask why sometimes cards get created after the footer is appended */
+.header{
+    text-align: center;
+    padding: 50px 0;
+    font-size: 40px;
+    width: 100%;
+    height: 200px;
+    color: white;
+    background-color:rgb(255, 106, 106);
+}

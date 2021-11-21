@@ -6,7 +6,7 @@ const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern')
 const Manager = require('./lib/Manager')
 const teamList = [];
-let html;
+let html = '';
 let footer = `</section>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

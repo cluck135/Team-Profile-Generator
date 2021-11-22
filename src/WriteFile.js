@@ -8,7 +8,7 @@ let footer = `</section>
 </html>`;
 
 let html = '';
-
+// function to create a long string to import into a index.html file for the website
 let makeWebsite = (teamList, teamName) => {
     let header = `<!DOCTYPE html>
     <html>
@@ -29,7 +29,7 @@ let makeWebsite = (teamList, teamName) => {
             </header>
             <section class="row justify-content-around">`;
             html += header;
-
+    // loop through the team members to get their attributes
     teamList.forEach(element => {
         let icon;
         let uniqueItem;
@@ -71,15 +71,16 @@ let makeWebsite = (teamList, teamName) => {
                       </div>
                     </div>
                   </div>`
-        html += str;
+        html += str; //add new employee card to html string for index.html
 
        
 });
 html += footer;
+
 fs.writeFile('./index.html', html, err => {
     err? console.error(err) : console.log("created Website!");
 });
 
 }
-
+// exports the function makeWebsite
 module.exports = makeWebsite;

@@ -9,16 +9,18 @@ const makeWebsite = require('./src/WriteFile');
 const teamList = [];
 let teamName = '';
 
+// asks the manager questions first intentionally so we can get the team name and manager info since there can only be one manager
 function assemble() {
     inquire
     .prompt(questions.manager).then((data) => {
         const manager = new Manager(data.name, data.id, data.email, data.officeNumber);
         teamList.push(manager);
         teamName = data.team;
-        newTeamMember();
+        newTeamMember(); 
     });
 }
 
+// asks for who you the user want to add then sends data to an array
 let newTeamMember = () => {
     inquire.prompt([
         {
@@ -40,16 +42,10 @@ let newTeamMember = () => {
                 newTeamMember();
     })} else {
         console.log("Team assembled!");
-        makeWebsite(teamList, teamName);
+        makeWebsite(teamList, teamName); // sends all the data to our file where the website will be written 
     }
     });
 
 } 
 
-
-
 assemble();
-
-
-
-

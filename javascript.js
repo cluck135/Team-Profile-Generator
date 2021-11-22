@@ -1,10 +1,10 @@
-const { WSA_E_CANCELLED } = require('constants');
 const fs = require('fs');
 const inquire = require('inquirer');
-const Employee = require('./lib/Employee')
-const Engineer = require('./lib/Engineer')
-const Intern = require('./lib/Intern')
-const Manager = require('./lib/Manager')
+const Employee = require('./lib/Employee');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
+const Manager = require('./lib/Manager');
+const questions = require('./lib/Questions');
 const teamList = [];
 let html = '';
 let footer = `</section>
@@ -13,81 +13,7 @@ let footer = `</section>
 <script src="../javascript.js" async defer></script>
 </body>
 </html>`;
-const questions = {
-    manager: [{
-        type: 'Input',
-        message: 'What is the team name?',
-        name: 'team'
-    },
-    {
-        type: 'input',
-        message: 'What is the the Manager\'s name?',
-        name: 'name',
-    },
-    {
-        type: 'input',
-        message: 'What is the the Manager\'s ID?',
-        name: 'id'
-    },
-    {
-        type: 'input',
-        message: 'What is the the Manager\'s email?',
-        name: 'email',
-        validate: email => {
-            return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
-        }
-    },
-    {
-        type: 'input',
-        message: 'What is the  Manager\'s office number?',
-        name: 'officeNumber'
-    }],
-    engineer: [{
-        type: 'input',
-        message: 'What is the Engineer\'s name?',
-        name: 'name',
-    },
-    {
-        type: 'input',
-        message: 'What is the Engineer\'s ID?',
-        name: 'id'
-    },
-    {
-        type: 'input',
-        message: 'What is the Engineer\'s email?',
-        name: 'email',
-        validate: email => {
-            return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
-        }         },
-    {
-        type: 'input',
-        message: 'what is your github',
-        name: 'github',
-    }],
-    intern: [{
-        type: 'input',
-        message: 'What is the Intern\'s name?',
-        name: 'name',
-    },
-    {
-        type: 'input',
-        message: 'What is the Intern\'s ID?',
-        name: 'id'
-    },
-    {
-        type: 'input',
-        message: 'What is the Intern\'s email?',
-        name: 'email',
-        validate: email => {
-            return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
-        }          
-    },
-    {
-        type: 'input',
-        message: 'what is the Intern\'s school?',
-        name: 'school',
-    }]
-}
+
     
 
 function assemble() {

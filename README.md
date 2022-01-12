@@ -25,7 +25,7 @@ node index.js
 Open Source
 
 ## Test Instructions
-None
+N/A
 
 ## License
 This project is licensed under the terms of the [MIT](https://opensource.org/licenses/MIT) license

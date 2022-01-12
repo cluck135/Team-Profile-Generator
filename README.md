@@ -18,15 +18,14 @@ npm i
 ```
 
 ## Usage Information
-Used to build a team 
-
-## Contribution Guidelines
-Open to all
-
-## Test Instructions
 ```
 node index.js
 ```
+## Contribution Guidelines
+Open Source
+
+## Test Instructions
+None
 
 ## License
 This project is licensed under the terms of the [MIT](https://opensource.org/licenses/MIT) license

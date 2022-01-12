@@ -71,9 +71,7 @@ let makeWebsite = (teamList, teamName) => {
                       </div>
                     </div>
                   </div>`
-        html += str; //add new employee card to html string for index.html
-
-       
+        html += str; //add new employee card to html string for index.html       
 });
 html += footer;
 
